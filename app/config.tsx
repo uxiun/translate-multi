@@ -46,7 +46,7 @@ const LangSpecifiConfig: React.FC = () => {
     })
   }, [useWatchValue])
   const translateLabel = translateFromMap(appconfig.lang)(mapForTranslate)
-  const MUIcheckbox: FC<{name: Path<Form>}> = ({name}) => (
+  const MUIcheckbox: FC<{name: Path<Form>}> = function NamedMUIcheckbox({name}) {return (
     <Controller
       control={control}
       name={name}
@@ -57,10 +57,10 @@ const LangSpecifiConfig: React.FC = () => {
               />} label={ translateLabel(name)} />
       )}
     />
-  )
+  )}
 
 
-  const MUISelect = (value_display_items: [string, string][]) : FC<{name: Path<Form>}> => ({name}) => (
+  const MUISelect = (value_display_items: [string, string][]) : FC<{name: Path<Form>}> => function NamedMUIselect({name}){return (
     <Controller
       control={control}
       name={name}
@@ -83,7 +83,7 @@ const LangSpecifiConfig: React.FC = () => {
           </Select>
         </FormControl>
       )} />
-  )
+  )}
   const translateMenuitems: Map<Path<Form>, Map<string, string[]>> = new Map([
     ["zh.pinyin_display", new Map([
       ["line", ["line", "線"]],

@@ -358,8 +358,8 @@ const MultiLineTranslation: React.FC<MLTs> = ({text, lang}) => {
 }
 
 import {pinyin} from "pinyin-pro"
-const SpecificOutput = (config: LangSpecifiConfig) => (lang: string, line: string) =>
-  ["zh", "zh-CN", "zh-TW"].includes(lang)
+const SpecificOutput = (config: LangSpecifiConfig) => function NamedSpecificOutput(lang: string, line: string) {
+  return ["zh", "zh-CN", "zh-TW"].includes(lang)
   ? (config.zh.pinyin
     ? <>
       <div className='line'>{line}</div>
@@ -376,6 +376,7 @@ const SpecificOutput = (config: LangSpecifiConfig) => (lang: string, line: strin
     : <>{line}</>
   )
   : <>{line}</>
+}
 
 // type TranslationListItemProps = {
 //   translations: Map<string, string>
