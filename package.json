@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc --watch",
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
