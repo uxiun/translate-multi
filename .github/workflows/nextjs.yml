@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.8.x
 
       - name: Install NPM packages
         run: pnpm i --frozen-lockfile
